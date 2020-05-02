@@ -4,6 +4,8 @@
 
 #include "pch.h"
 #include "framework.h"
+#include "../CppCLRInterop/CppCLRInterop.h"
+
 // SHARED_HANDLERS can be defined in an ATL project implementing preview, thumbnail
 // and search filter handlers and allows sharing of document code with that project.
 #ifndef SHARED_HANDLERS
@@ -45,7 +47,7 @@ BOOL CMyExistingMFCAppDoc::OnNewDocument()
 
 	// TODO: add reinitialization code here
 	// (SDI documents will reuse this document)
-
+    CppCLRInterop::LoadMsgTypeFiltersWindow(0x0205, "Fred", "fred_t");
 	return TRUE;
 }
 
